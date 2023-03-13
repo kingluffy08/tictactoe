@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import './index.css';
 import loseSound from "./fail.mp3";
-import tieSound from "./draw.mp3"
+import tieSound from "./draw.mp3";
+import pindot from "./click.mp3";
 
 
 function Square(props) {
     return (
 
         <button disabled={props.disableBtn}
-            onClick={() => {props.onClick(); } }
+            onClick={() => {props.onClick(); NagPindot(); } }
             className={props.class} 
             
             >
@@ -291,4 +292,7 @@ function findBestSquare(squares, player) {
 
   function draw(){
     new Audio(tieSound).play();
+  }
+  function  NagPindot(){
+    new Audio(pindot).play();
   }
